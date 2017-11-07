@@ -1,8 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { fetchPosts } from '../actions/index';
-
+import { Link } from 'react-router';
 
 class PostsIndex extends Component {
     static propTypes = {
@@ -20,7 +19,10 @@ class PostsIndex extends Component {
 
     render() {
         return (
-            <div>List of blog post</div>
+            <div className="text-xs-right">
+                <Link to="posts/new" className="btn btn-primary">Add a post</Link>
+                List of blog post
+            </div>
         );
     }
 }
